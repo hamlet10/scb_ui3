@@ -26,6 +26,7 @@
 @import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
 @import '../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
 
+
 nav {
   padding: 30px;
 }
