@@ -16,6 +16,7 @@
     "@syncfusion/ej2-base": "^21.1.40",
     "@syncfusion/ej2-buttons": "^21.1.37",
     "@syncfusion/ej2-vue-inputs": "^21.1.39",
+    "@syncfusion/ej2-vue-notifications": "^21.1.37",
     "@syncfusion/ej2-vue-schedule": "^21.1.39",
     "core-js": "^3.8.3",
     "json-server": "^0.17.3",

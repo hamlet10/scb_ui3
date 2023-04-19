@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { MessageComponent, MessagePlugin } from '@syncfusion/ej2-vue-notifications';
 
 
 /* add icons to the library */
@@ -30,4 +31,4 @@ library.add(faCircleArrowRight)
 
 registerLicense("ORg4AjUWIQA/Gnt2VFhhQlJBfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hSn5Xd0djUH5YdHFTRmNZ")
 
-createApp(App).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+createApp(App).use(router).component(MessagePlugin.name, MessageComponent).component('font-awesome-icon', FontAwesomeIcon).mount('#app')

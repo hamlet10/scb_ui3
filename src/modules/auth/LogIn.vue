@@ -10,33 +10,20 @@
       <div class="login-content">
         <!-- action="/" method="post" -->
         <form onsubmit="return false;">
+          <ejs-message v-if="errors" id="msg_error" severity="Error">Usuario y/o Contrase&ntildea Incorrecto</ejs-message>
           <div class="control">
             <label for="ID">ID</label>
             <input class="light-border" :v-model="txtID" id="txtID" name="txtID" type="text" value="" />
-            <div v-if="errors.length" class="e-input-group e-error" data-required-message="hello"></div>
           </div>
           <div class="control">
             <label for="PIN_Contrase_a">PIN/Contrase&#241;a</label>
             <input class="light-border" :v-model="txtUserPass" id="txtUserPass" name="txtUserPass" type="password" />
-            <div v-if="errors.length" class="e-input-group e-error">
-               
-              <ul>
-                <li v-for="error in errors">{{ error }}</li>
-              </ul>
-
-            </div>
           </div>
           <router-link class="router--link" :to="{ name: 'recover-pass' }">Olvide mi contrase&#241a?</router-link>
           <button @click="Authenticate" class="bg-black no-border button-square"><font-awesome-icon
               :icon="['fa', 'circle-arrow-right']" />
             Acceder
           </button>
-          <!-- <p v-if="errors.length">
-          <ul>
-            <li v-for="error in errors">{{ error }}</li>
-          </ul>
-          </p> -->
-
         </form>
       </div>
 
@@ -47,24 +34,13 @@
 <script setup>
 import { ref } from "vue";
 import router from "@/router";
-import {FormValidator, FormValidatorModel} from '@syncfusion/ej2-inputs';
+
+
+
+
 
 name: 'LogIn'
-const errors = ref([]);
-// function chekForm(e) {
-//   if (!txtID) {
-//     errors.value.push("Matricula Requerida")
-//   } else {
-//     return true
-//   }
-//   if (!txtUserPass) {
-//     errors.value.push("Contraseña Requerida")
-//   } else {
-//     return true
-//   }
-//   e.preventDefault();
-// }
-// export default {
+const errors = ref(false);
 
 const user = {
   'id': '1059560',
@@ -73,57 +49,21 @@ const user = {
 
 function Authenticate() {
 
-  if (!txtID.value) {
-    errors.value.push('Matricula Requerida')
-    console.log(errors)
-  }
-  if (!txtUserPass) {
-    errors.value.push('Contraseña Requerida')
-    console.log(errors)
-  }
+
   if (user.id == txtID.value) {
     if (user.password == txtUserPass.value) {
       localStorage.setItem('isAuthenticated', true)
       router.push('/appointments')
     } else {
-      errors.value.push("Usuario y/o Contraseña Incorrecta")
+      errors.value = true
     }
   } else {
-    errors.value.push("Usuario y/o Contraseña Incorrecta")
     localStorage.setItem('isAuthenticated', false)
     console.log(errors)
+    errors.value = true
   }
-  // localStorage.setItem('isAuthenticated', true)
-  // router.push('/appointments')
-
 }
-// return{
-//   Authenticated
-// };
-  // data (){
-  //   return{
-  //     Authenticated: false
-  //   }
-  // },
-  // mounted(){
-  //   if(localStorage.isAuthenticated){
-  //     this.Authenticated = localStorage.isAuthenticated
-  //   }else{
-  //     localStorage.setItem('isAuthenticated', false)
-  //   }
-  // },
-  // watch:{
-  //   Authenticated(newValue){
-  //     localStorage.isAuthenticated = newValue
-  //   }
-  // },
-  // methods: {
-  //   Authenticate (){
-  //     localStorage.setItem('isAuthenticated', true)
-  //     this.$router.push('/appointments')
-  //   }
-  // }
-// }
+
 </script>
 
 
