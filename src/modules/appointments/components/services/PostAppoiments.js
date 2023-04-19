@@ -11,7 +11,8 @@ class PostAppoiments {
     }
     async fetchAll(){
         try{
-            const url = 'http://localhost:3000/appointment'
+            const url = 'https://localhost:9001/api/Appointment'
+            // const url = 'http://localhost:3000/Appointment'
             const response = await fetch(url)
             const json = await response.json()
             this.posts.value = await json

@@ -3,19 +3,20 @@
         <table>
             <tr>
                 <th>Fecha</th>
-                <th>Hora</th>
                 <th>Estudiante</th>
                 <th>Cubiculo</th>
                 <th>Estado</th>
                 <th>Opciones</th>
             </tr>
-            <tr v-for="post in posts">
-                <td>{{ post.date }}</td>
-                <td>{{ post.star }} - {{ post.finish }}</td>
-                <td>{{ post.UserName }}</td>
-                <td>{{ post.Room }}</td>
-                <td>{{ post.Status }}</td>
-                <td v-if="post.Options">
+            <tr v-for="post in posts.data">
+                <td>{{ post.dateTime }}</td>
+                <td>{{ post.studentName + " " + post.studentLastName }}</td>
+                <td>{{ post.roomId }}</td>
+                <td>
+                    <p v-if="post.status != 1">Aprovechada</p>
+                    <p v-else>Cancelada</p>
+                </td>
+                <td v-if="post.status != 1">
                     <button class="button-cancel" v-on:click="$event =>clickCancel(post)">Cancelar</button>
                 </td>
             </tr>
@@ -32,9 +33,9 @@
     const posts = service.Posts
     onMounted(async () => {
         await service.fetchAll()
-        console.log(service.posts)
     })
     function clickCancel(post){
+        console.log(post.dateTime + 'hola')
         post.Status = "Cancelada"
         post.Options = false
     }

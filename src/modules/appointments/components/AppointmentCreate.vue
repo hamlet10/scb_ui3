@@ -13,7 +13,6 @@
 
 <script>
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, DragAndDrop, Resize, ViewsDirective, ViewDirective, ResourcesDirective, ResourceDirective } from "@syncfusion/ej2-vue-schedule";
-
 export default {
     name: 'AppointmentCreate',
     components: {
@@ -24,8 +23,9 @@ export default {
     'e-resource': ResourceDirective
   },
   data() {
-        return {
-            selectedDate: new Date(2023, 3, 12),
+        let actual = new Date(Date.now())
+        return {        
+            selectedDate: new Date(actual.getFullYear(), actual.getMonth(), actual.getDate()),
             allowMultiple: true,
             ownerDataSource: [
                 { OwnerText: 'Nancy', Id: 1, OwnerColor: '#ffaa00' },
