@@ -26,42 +26,42 @@
           </button>
         </form>
       </div>
-
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import AuthService from "./AuthService";
+import { onMounted, ref } from "vue";
 import router from "@/router";
-
-
-
 
 
 name: 'LogIn'
 const errors = ref(false);
 
-const user = {
-  'id': '1059560',
-  'password': 'Proyecto2023'
-}
+const service = new AuthService()
+const user = service.User
+onMounted(async () => {
+  await service.fetchAll()
+})
+
 
 function Authenticate() {
-
-
-  if (user.id == txtID.value) {
-    if (user.password == txtUserPass.value) {
+  // console.log(txtID.value)
+  // console.log(user.value.some((u)=> u.id == txtID.value))
+  if (user.value.some((u) => u.id == txtID.value)) {
+    const currentUser = user.value.filter((u) => u.id == txtID.value)
+    if (currentUser[0].password == txtUserPass.value) {
       localStorage.setItem('isAuthenticated', true)
       router.push('/appointments')
-    } else {
+    }else{
       errors.value = true
     }
-  } else {
-    localStorage.setItem('isAuthenticated', false)
-    console.log(errors)
+  }else{
+    console.log('currentUser: ', currentUser.id)
     errors.value = true
   }
+
 }
 
 </script>

@@ -22,11 +22,13 @@ const routes = [
       },
       {
         path: 'create',
+        name:'create',
         component: () => import(/* webpackChunkName: 'appointmentsCreate' */'@/modules/appointments/components/AppointmentCreate')
 
       },
       {
         path: 'list',
+        name: 'list',
         component: () => import(/* webpackChunkName: 'appointmentsList' */'@/modules/appointments/components/AppointmentList')
       },
     ],

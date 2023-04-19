@@ -1,11 +1,11 @@
 <template>
     <nav>
         <div class="column">
-            <router-link to="/Create">Reservacion</router-link>
+            <router-link :to="{name:'create'}">Reservacion</router-link>
         </div>
         <p class="before-link"> / </p>
         <div class="column">
-            <router-link to="/List">Historial de reservaciones</router-link>
+            <router-link :to="{name:'list'}">Historial de reservaciones</router-link>
         </div>
     </nav>
     <router-view></router-view>
