@@ -23,7 +23,6 @@
         </table>
     </div>
 </template>
-
 <script setup>
     
     import PostAppoiments from './services/PostAppoiments';
@@ -35,9 +34,8 @@
         await service.fetchAll()
     })
     function clickCancel(post){
-        console.log(post.dateTime + 'hola')
-        post.Status = "Cancelada"
-        post.Options = false
+        post.status = 1
+        console.log(post.status)
     }
 </script>
 <style scoped>
