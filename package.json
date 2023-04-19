@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "dummy": "json-server --watch dbo.json --port 3000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -17,6 +18,7 @@
     "@syncfusion/ej2-vue-inputs": "^21.1.39",
     "@syncfusion/ej2-vue-schedule": "^21.1.39",
     "core-js": "^3.8.3",
+    "json-server": "^0.17.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },

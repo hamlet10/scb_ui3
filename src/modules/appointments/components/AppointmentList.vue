@@ -1,12 +1,79 @@
 <template>
-    <div>
-        <h1>Hello HelloWorld</h1>
+    <div class="list">
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Estudiante</th>
+                <th>Cubiculo</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+            <tr v-for="post in posts">
+                <td>{{ post.date }}</td>
+                <td>{{ post.star }} - {{ post.finish }}</td>
+                <td>{{ post.UserName }}</td>
+                <td>{{ post.Room }}</td>
+                <td>{{ post.Status }}</td>
+                <td v-if="post.Options">
+                    <button class="button-cancel" v-on:click="$event =>clickCancel(post)">Cancelar</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'AppointmentList'
-}
-
+<script setup>
+    
+    import PostAppoiments from './services/PostAppoiments';
+    import { onMounted } from 'vue';
+    name: 'list'
+    const service = new PostAppoiments()
+    const posts = service.Posts
+    onMounted(async () => {
+        await service.fetchAll()
+        console.log(service.posts)
+    })
+    function clickCancel(post){
+        post.Status = "Cancelada"
+        post.Options = false
+    }
 </script>
+<style scoped>
+.list{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+table{
+    margin: 20px;
+    width: 70%;
+    border-bottom: 1px solid red;
+    font-family: sans-serif;
+}
+table th{
+    background-color: brown;
+    color: #fff;
+    font-weight: initial;
+    padding: 10px;
+}
+td{
+    padding: 10px;
+}
+table, th, td {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    border-collapse: collapse;
+    text-align: center;
+}
+.button-cancel{
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+.button-cancel:hover{
+    background-color: brown;
+}
+</style>
