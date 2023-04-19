@@ -1,0 +1,57 @@
+{
+    "Users" : [
+    {
+        "id": 1059560,
+        "password":"Proyecto2023"
+    },
+    {
+        "id": 1096157,
+        "password":"Proyecto2023"
+    },
+    {
+        "id": 1088279,
+        "password":"Proyecto2023"
+    },
+    {
+        "id": 1090192,
+        "password":"Proyecto2023"
+    },
+    {
+        "id": 1096316,
+        "password":"Proyecto2023"
+    }
+],
+  "Appointment": [
+      { 
+          "id": 1,
+          "date": "18/4/2023",
+          "star": "4:00",
+          "finish": "6:00",
+          "Room": 2,
+          "UserName": "Endy Infante",
+          "Status": "Aprovechada",
+          "Options": true
+      },
+      { 
+          "id": 1,
+          "date": "18/4/2023",
+          "star": "4:00",
+          "finish": "6:00",
+          "Room": 2,
+          "UserName": "Endy Infante",
+          "Status": "Cancelada",
+          "Options": false
+      },   
+      { 
+          "id": 1,
+          "date": "18/4/2023",
+          "star": "4:00",
+          "finish": "6:00",
+          "Room": 2,
+          "UserName": "Endy Infante",
+          "Status": "Cancelada",
+          "Options": false
+      }  
+  ]
+  
+}
