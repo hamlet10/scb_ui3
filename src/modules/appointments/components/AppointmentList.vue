@@ -35,6 +35,7 @@
     })
     function clickCancel(post){
         post.status = 1
+        service.updateStatusAppointment(post)
         console.log(post.status)
     }
 </script>
