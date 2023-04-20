@@ -53,13 +53,13 @@ function Authenticate() {
     const currentUser = user.value.filter((u) => u.id == txtID.value)
     if (currentUser[0].password == txtUserPass.value) {
       localStorage.setItem('isAuthenticated', true)
-      localStorage.setItem('currentUser', txtID.value)
+      //localStorage.setItem('currentUser', txtID.value)
       router.push('/appointments')
     }else{
       errors.value = true
     }
   }else{
-    console.log('currentUser: ', currentUser.id)
+    //console.log('currentUser: ', currentUser.id)
     errors.value = true
   }
 
