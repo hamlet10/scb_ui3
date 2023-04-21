@@ -57,8 +57,9 @@ function Authenticate() {
     }else{
       errors.value = true
     }
-  }else{
-    console.log('currentUser: ', currentUser.id)
+  } else {
+    localStorage.setItem('isAuthenticated', false)
+    console.log(errors)
     errors.value = true
   }
 
