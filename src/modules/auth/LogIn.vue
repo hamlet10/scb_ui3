@@ -54,7 +54,7 @@ function Authenticate() {
     if (currentUser[0].password == txtUserPass.value) {
       localStorage.setItem('isAuthenticated', true)
       //localStorage.setItem('currentUser', txtID.value)
-      router.push('/appointments')
+      router.push('/home')
     }else{
       errors.value = true
     }

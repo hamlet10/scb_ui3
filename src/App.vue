@@ -27,10 +27,15 @@
 @import '../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
 @import "../node_modules/@syncfusion/ej2-vue-notifications/styles/message/material.css";
 
-body{
-  margin: 0px 0px;
+#app{
   width: 100%;
   height: 100%;
+}
+body{
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #fcfafa;
 }
 header{
   padding: 20px;
