@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "dummy": "json-server --watch dbo.json --port 3000"
+    "dummy": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
