@@ -1,9 +1,9 @@
 <template>
-  <nav>
+  <header>
     <!-- <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> -->
     <img src="../src/assets/Intec_logo.png">
-  </nav>
+  </header>
   <router-view></router-view>
 </template>
 <script>
@@ -27,17 +27,17 @@
 @import '../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
 @import "../node_modules/@syncfusion/ej2-vue-notifications/styles/message/material.css";
 
-
-nav {
-  padding: 30px;
+#app{
+  width: 100%;
+  height: 100%;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body{
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #fcfafa;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+header{
+  padding: 20px;
 }
 </style>
