@@ -1,30 +1,39 @@
 <template>
-
-    <ejs-schedule height='550px' width='100%' :selectedDate='selectedDate' :eventSettings='eventSettings'>
-      <e-views>
-        <e-view option='Day'></e-view>
-        <e-view option='Week' startHour='08:00' endHour='23:00'></e-view>
-        <e-view option='WorkWeek' startHour='08:00' endHour='23:00'></e-view>
-        <e-view option='Month' showWeekend=false></e-view>
-        <e-view option='Agenda'></e-view>
-      </e-views>
+    <ejs-schedule height='550px' width='100%' :editorTemplate="'schedulerEditorTemplate'" :popupOpen="onPopupOpen"
+        :selectedDate='selectedDate' :eventSettings='eventSettings'>
+        <template template v-slot:schedulerEditorTemplate="{}">
+            <AppointmentForm :users="listUser"></AppointmentForm>
+        </template>
+        <e-views>
+            <e-view option='Day'></e-view>
+            <e-view option='Week' startHour='08:00' endHour='23:00'></e-view>
+            <e-view option='WorkWeek' startHour='08:00' endHour='23:00'></e-view>
+            <e-view option='Month' showWeekend=false></e-view>
+            <e-view option='Agenda'></e-view>
+        </e-views>
     </ejs-schedule>
 </template>
 
 <script>
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, DragAndDrop, Resize, ViewsDirective, ViewDirective, ResourcesDirective, ResourceDirective } from "@syncfusion/ej2-vue-schedule";
+import AppointmentForm from "./AppointmentForm.vue";
+import { DropDownListComponent } from "@syncfusion/ej2-vue-dropdowns";
+import { DateTimePickerComponent  } from "@syncfusion/ej2-vue-calendars";
 export default {
     name: 'AppointmentCreate',
     components: {
-    'ejs-schedule': ScheduleComponent,
-    'e-views': ViewsDirective,
-    'e-view': ViewDirective,
-    'e-resources': ResourcesDirective,
-    'e-resource': ResourceDirective
-  },
-  data() {
+        'ejs-schedule': ScheduleComponent,
+        'e-views': ViewsDirective,
+        'e-view': ViewDirective,
+        'e-resources': ResourcesDirective,
+        'e-resource': ResourceDirective,
+        'ejs-dropdownlist': DropDownListComponent,
+        'ejs-datetimepicker': DateTimePickerComponent ,
+        AppointmentForm
+    },
+    data() {
         let actual = new Date(Date.now())
-        return {        
+        return {
             selectedDate: new Date(actual.getFullYear(), actual.getMonth(), actual.getDate()),
             allowMultiple: true,
             ownerDataSource: [
@@ -58,12 +67,43 @@ export default {
                         OwnerId: 1
                     }
                 ]
-            },
+            }
         };
-     },
-  provide: {
-    schedule: [Day, Week, WorkWeek, Month, Agenda]
-  }
+    },
+    methods: {
+        onPopupOpen: function (args) {
+            console.log(args)
+            // if (args.type === "Editor") {
+            //     let statusElement = args.element.querySelector("#EventType");
+            //     if (!statusElement.classList.contains("e-dropdownlist")) {
+            //         let dropDownListObject = new DropDownList({
+            //             placeholder: "Choose status",
+            //             value: statusElement.value,
+            //             dataSource: ["New", "Requested", "Confirmed"]
+            //         });
+            //         dropDownListObject.appendTo(statusElement);
+            //         statusElement.setAttribute("name", "EventType");
+            //     }
+            //     let startElement = args.element.querySelector("#StartTime");
+            //     if (!startElement.classList.contains("e-datetimepicker")) {
+            //         new DateTimePicker(
+            //             { value: new Date(startElement.value) || new Date() },
+            //             startElement
+            //         );
+            //     }
+            //     let endElement = args.element.querySelector("#EndTime");
+            //     if (!endElement.classList.contains("e-datetimepicker")) {
+            //         new DateTimePicker(
+            //             { value: new Date(endElement.value) || new Date() },
+            //             endElement
+            //         );
+            //     }
+            // }
+        }
+    },
+    provide: {
+        schedule: [Day, Week, WorkWeek, Month, Agenda]
+    }
 }
 
 </script>
