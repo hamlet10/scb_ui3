@@ -11,7 +11,7 @@ class PostAppoiments {
     }
     async fetchAll(){
         try{
-            const url = 'https://localhost:9001/api/Appointment';
+            const url = 'https://localhost:44324/api/Appointment';
             // const url = 'http://localhost:3000/Appointment';
             const response = await fetch(url);
             const json = await response.json();
@@ -52,6 +52,45 @@ class PostAppoiments {
                 }
             }).then((response) => response.json());
         }catch(err) {
+            console.log(err);
+        }
+    }
+    async addAppointment(post){
+
+        try {
+            let status;
+            const url = 'https://localhost:44324/api/Appointment/'
+            if (post.status != 1) {
+                status = 0
+            } else {
+                status = 1
+            }
+            let text = {
+              dateTime: new Date(Date.now()),
+              from: post.startTime.format('YYYY-MM-DDTHH:MM:SSZ'),
+              to: post.endTime.format('YYYY-MM-DDTHH:MM:SSZ'),
+              roomId: 1,
+              host: 1059560,
+              studentId: 1059560,
+              studentName: "Endy",
+              studentLastName: "Infante",
+
+              checkIn: null,
+              checkOut: null,
+              status: 0,
+              Options: false,
+            };
+            await fetch(url, {
+                method: 'POST',
+                body : JSON.stringify(text),
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            }).then((response) => {
+                console.log(text.from.format()),
+                response.json()
+            });
+        } catch (error) {
             console.log(err);
         }
     }

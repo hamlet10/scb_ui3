@@ -27,7 +27,6 @@
     
     import PostAppoiments from './services/PostAppoiments';
     import { onMounted } from 'vue';
-    name: 'list'
     const service = new PostAppoiments()
     const posts = service.Posts
     onMounted(async () => {

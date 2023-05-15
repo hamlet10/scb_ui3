@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 import { registerLicense } from "@syncfusion/ej2-base";
 
 
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 

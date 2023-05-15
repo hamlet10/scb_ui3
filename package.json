@@ -20,9 +20,11 @@
     "@syncfusion/ej2-vue-inputs": "^21.1.39",
     "@syncfusion/ej2-vue-notifications": "^21.1.37",
     "@syncfusion/ej2-vue-schedule": "^21.1.39",
+    "axios": "^1.4.0",
     "core-js": "^3.8.3",
     "json-server": "^0.17.3",
     "vue": "^3.2.13",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
