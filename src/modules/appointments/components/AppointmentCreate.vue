@@ -1,13 +1,15 @@
 <template>
-    <ejs-schedule 
-    height='550px' 
-    width='100%' 
+    <!-- :onPopupOpen="onPopupOpen" -->
+    <ejs-schedule height='550px' width='100%' 
     :editorTemplate="'schedulerEditorTemplate'" 
     :onPopupOpen="onPopupOpen"
-    :onPopupClose="onPopupClose"
-    :selectedDate='selectedDate' :eventSettings='eventSettings'>
+    :onPopupClose="onPopupClose" 
+    :selectedDate='selectedDate' 
+    :eventSettings='eventSettings'
+    :eventClick='onEventClick'>
+
         <template template v-slot:schedulerEditorTemplate="{}">
-            <AppointmentForm ></AppointmentForm>
+            <AppointmentForm></AppointmentForm>
         </template>
         <e-views>
             <e-view option='Day'></e-view>
@@ -24,8 +26,9 @@
 
 import PostAppoiments from './services/PostAppoiments';
 import AppointmentForm from "./AppointmentForm.vue";
-import {  onMounted, provide } from "vue";
+import { onMounted, provide } from "vue";
 import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
+// import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import {
     ScheduleComponent as EjsSchedule, ViewsDirective as EViews, ViewDirective as EView,
     ResourcesDirective as EResources, ResourceDirective as EResource,
@@ -50,15 +53,40 @@ onMounted(
     //     }
     async () => {
         await service.fetchAll()
-    })
+    }
+)
+
 const eventSettings = {
-    
-    dataSource: appointments.value.data,
+
+    dataSource: [{
+      "from": "2023-06-11T10:00:00",
+      "to": "2023-06-11T12:00:00",
+      "host": 1059560,
+      "dateTime": "2023-06-11T06:27:24.8461176",
+      "status": 0,
+      "checkIn": null,
+      "checkOut": null,
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 6019
+    },
+    {
+      "from": "2023-06-11T10:00:00",
+      "to": "2023-06-11T12:00:00",
+      "host": 1059560,
+      "dateTime": "2023-06-11T06:43:00.9410103",
+      "status": 0,
+      "checkIn": null,
+      "checkOut": null,
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 6020
+    }],
     fields: {
-        id: {name: 'id'},
-        subject: {name: 'studentName'},
-        startTime: { name: 'from' },
-        endTime: { name: 'to' },
+        id: 'id',
+        subject:  {name: 'host'} ,
+        startTime:  {name: 'from'} ,
+        endTime: {name:'to'}  
     }
 
 }
@@ -66,17 +94,27 @@ const eventSettings = {
 L10n.load({
     'es-do': {
         'schedule': {
-          'addTitle' : 'Blue'
+            'addTitle': 'Blue',
         }
     }
 })
 
-function onPopupClose(args){
+function onPopupClose(args) {
     if (args.data != isNullOrUndefined) {
         service.addAppointment(args.data)
         // console.log(args.data)
     }
-    // console.log(appointments.value.data)
+
+    //  console.log(dataManager.value)
 }
+
+function onPopupOpen(args) {
+console.log(args)
+}
+
+function onEventClick(args){
+    console.log(args)
+}
+
 
 </script>
