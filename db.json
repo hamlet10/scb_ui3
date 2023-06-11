@@ -45,6 +45,18 @@
       "studentId": 1059560,
       "roomId": null,
       "id": 6021
+    },
+    {
+      "dateTime": "2023-06-11T22:42:56.745Z",
+      "from": "6/11/2023, 10:00:00 AM",
+      "to": "6/11/2023, 10:00:00 AM",
+      "roomId": 1,
+      "host": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "status": 0,
+      "Options": false,
+      "id": 6022
     }
   ]
 }

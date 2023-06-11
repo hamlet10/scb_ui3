@@ -68,13 +68,13 @@ class PostAppoiments {
             }
             let text = {
               dateTime: new Date(Date.now()),
-              from: post.startTime.format('YYYY-MM-DDTHH:MM:SSZ'),
-              to: post.endTime.format('YYYY-MM-DDTHH:MM:SSZ'),
+              from: post.startTime.toLocaleString(),
+              to: post.endTime.toLocaleString(),
               roomId: 1,
               host: 1059560,
-              studentId: 1059560,
-              studentName: "Endy",
-              studentLastName: "Infante",
+            //   studentId: 1059560,
+            //   studentName: "Endy",
+            //   studentLastName: "Infante",
 
               checkIn: null,
               checkOut: null,
