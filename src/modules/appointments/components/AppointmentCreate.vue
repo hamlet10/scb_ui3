@@ -29,8 +29,10 @@ import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
 import {
     ScheduleComponent as EjsSchedule, ViewsDirective as EViews, ViewDirective as EView,
     ResourcesDirective as EResources, ResourceDirective as EResource,
-    Day, Week, WorkWeek, Month, Agenda
+    Day, Week, WorkWeek, Month, Agenda, SchedulePlugin
 } from "@syncfusion/ej2-vue-schedule";
+import { DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+
 
 
 
@@ -51,17 +53,25 @@ onMounted(
     async () => {
         await service.fetchAll()
     })
+
+let dataManager = new DataManager({
+    url: 'http://localhost:3000/Appointment',
+    adaptor: new ODataV4Adaptor((results) => { dataSource = results}),
+    crossDomain: true,
+
+});
 const eventSettings = {
     
-    dataSource: appointments.value.data,
+    dataSource: dataManager,
     fields: {
         id: {name: 'id'},
-        subject: {name: 'studentName'},
+        subject: {name: 'studentId'},
         startTime: { name: 'from' },
         endTime: { name: 'to' },
     }
 
 }
+
 
 L10n.load({
     'es-do': {
@@ -77,6 +87,9 @@ function onPopupClose(args){
         // console.log(args.data)
     }
     // console.log(appointments.value.data)
+}
+
+function onPopupOpen(args){
 }
 
 </script>

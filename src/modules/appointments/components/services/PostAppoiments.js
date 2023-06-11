@@ -1,4 +1,5 @@
 import {ref} from 'vue'
+import { DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
 
 class PostAppoiments {
 
@@ -10,7 +11,7 @@ class PostAppoiments {
         return this.posts;
     }
     async fetchAll(){
-        try{
+        try{ 
             const url = 'https://localhost:44324/api/Appointment';
             // const url = 'http://localhost:3000/Appointment';
             const response = await fetch(url);
@@ -59,7 +60,7 @@ class PostAppoiments {
 
         try {
             let status;
-            const url = 'https://localhost:44324/api/Appointment/'
+            const url = 'http://localhost:3000/Appointment'
             if (post.status != 1) {
                 status = 0
             } else {
