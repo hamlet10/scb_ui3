@@ -19,7 +19,7 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { MessageComponent, MessagePlugin } from '@syncfusion/ej2-vue-notifications';
 import { SchedulePlugin, Day, Week, TimelineViews, Month, Agenda } from '@syncfusion/ej2-vue-schedule';
-import { DropDownListComponent, DropDownListPlugin } from '@syncfusion/ej2-vue-dropdowns';
+
 
 /* add icons to the library */
 library.add(faUserSecret)
@@ -36,7 +36,5 @@ registerLicense("ORg4AjUWIQA/Gnt2VFhhQlJBfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hSn5
 createApp(App)
 .use(router)
 .use(SchedulePlugin)
-// .use(DropDownListPlugin)
 .component(MessagePlugin.name, MessageComponent)
-// .component(DropDownListPlugin.name, DropDownListComponent)
 .component('font-awesome-icon', FontAwesomeIcon).mount('#app')
