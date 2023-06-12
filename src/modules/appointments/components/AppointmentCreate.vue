@@ -1,13 +1,15 @@
 <template>
-    <ejs-schedule 
-    height='550px' 
-    width='100%' 
+    <!-- :onPopupOpen="onPopupOpen" -->
+    <ejs-schedule height='550px' width='100%' 
     :editorTemplate="'schedulerEditorTemplate'" 
     :onPopupOpen="onPopupOpen"
-    :onPopupClose="onPopupClose"
-    :selectedDate='selectedDate' :eventSettings='eventSettings'>
+    :onPopupClose="onPopupClose" 
+    :selectedDate='selectedDate' 
+    :eventSettings='eventSettings'
+    :eventClick='onEventClick'>
+
         <template template v-slot:schedulerEditorTemplate="{}">
-            <AppointmentForm ></AppointmentForm>
+            <AppointmentForm></AppointmentForm>
         </template>
         <e-views>
             <e-view option='Day'></e-view>
@@ -24,8 +26,9 @@
 
 import PostAppoiments from './services/PostAppoiments';
 import AppointmentForm from "./AppointmentForm.vue";
-import {  onMounted, provide } from "vue";
+import { onMounted, provide } from "vue";
 import { L10n, isNullOrUndefined } from '@syncfusion/ej2-base';
+// import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 import {
     ScheduleComponent as EjsSchedule, ViewsDirective as EViews, ViewDirective as EView,
     ResourcesDirective as EResources, ResourceDirective as EResource,
@@ -60,6 +63,9 @@ let dataManager = new DataManager({
     crossDomain: true,
 
 });
+    }
+)
+
 const eventSettings = {
     
     dataSource: dataManager,
@@ -76,20 +82,23 @@ const eventSettings = {
 L10n.load({
     'es-do': {
         'schedule': {
-          'addTitle' : 'Blue'
+            'addTitle': 'Blue',
         }
     }
 })
 
-function onPopupClose(args){
+function onPopupClose(args) {
     if (args.data != isNullOrUndefined) {
         service.addAppointment(args.data)
         // console.log(args.data)
     }
-    // console.log(appointments.value.data)
+
+    //  console.log(dataManager.value)
 }
 
-function onPopupOpen(args){
+function onPopupOpen(args) {
+console.log(args)
 }
+
 
 </script>

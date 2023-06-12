@@ -36,13 +36,13 @@ class PostAppoiments {
                 "from": post.from,
                 "to": post.to,
                 "host": post.host,
-                "dateTime": post.dateTime,
+                // "dateTime": post.dateTime,
                 "status": status,
                 "checkIn": post.checkIn,
                 "checkOut": post.checkOut,
                 "studentId": post.studentId,
-                "studentName": post.studentName,
-                "studentLastName": post.studentLastName,
+                // "studentName": post.studentName,
+                // "studentLastName": post.studentLastName,
                 "roomId": post.roomId
             }
             await fetch(url, {
@@ -67,10 +67,10 @@ class PostAppoiments {
                 status = 1
             }
             let text = {
-              dateTime: new Date(Date.now()),
+            //   dateTime: new Date(Date.now()),
               from: post.startTime.toLocaleString(),
               to: post.endTime.toLocaleString(),
-              roomId: 1,
+              roomId: null,
               host: 1059560,
               studentId: 1059560,
             //   studentName: "Endy",
@@ -78,7 +78,7 @@ class PostAppoiments {
 
               checkIn: null,
               checkOut: null,
-              status: 0,
+              status: post.status,
               Options: false,
             };
             await fetch(url, {
@@ -88,7 +88,7 @@ class PostAppoiments {
                 'Content-Type': 'application/json'
                 }
             }).then((response) => {
-                console.log(text.from.format()),
+                console.log(text),
                 response.json()
             });
         } catch (error) {

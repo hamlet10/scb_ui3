@@ -16,7 +16,7 @@
     "@syncfusion/ej2-base": "^21.1.40",
     "@syncfusion/ej2-buttons": "^21.1.37",
     "@syncfusion/ej2-vue-calendars": "^21.1.41",
-    "@syncfusion/ej2-vue-dropdowns": "^21.1.41",
+    "@syncfusion/ej2-vue-dropdowns": "^21.2.5",
     "@syncfusion/ej2-vue-inputs": "^21.1.39",
     "@syncfusion/ej2-vue-notifications": "^21.1.37",
     "@syncfusion/ej2-vue-schedule": "^21.1.39",

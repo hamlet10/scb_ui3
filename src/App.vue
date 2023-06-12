@@ -27,7 +27,6 @@
 @import '../node_modules/@syncfusion/ej2-vue-schedule/styles/material.css';
 @import "../node_modules/@syncfusion/ej2-vue-notifications/styles/message/material.css";
 
-
 #app{
   width: 100%;
   height: 100%;
