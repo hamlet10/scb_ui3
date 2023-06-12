@@ -63,8 +63,7 @@ let dataManager = new DataManager({
     crossDomain: true,
 
 });
-    }
-)
+
 
 const eventSettings = {
     
