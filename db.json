@@ -26,66 +26,107 @@
       "from": "2023-06-11T10:00:00",
       "to": "2023-06-11T12:00:00",
       "host": 1059560,
-<<<<<<< HEAD
-      "dateTime": "2023-06-11T06:43:00.9410103",
-=======
       "dateTime": "2023-06-11T06:27:24.8461176",
->>>>>>> parent of 7bfd6a9 (Revert "trying schedule")
       "status": 0,
       "checkIn": null,
       "checkOut": null,
       "studentId": 1059560,
       "roomId": null,
-<<<<<<< HEAD
-      "id": 6020
-=======
       "id": 6019
->>>>>>> parent of 7bfd6a9 (Revert "trying schedule")
     },
     {
       "from": "2023-06-11T10:00:00",
       "to": "2023-06-11T12:00:00",
       "host": 1059560,
-<<<<<<< HEAD
-      "dateTime": "2023-06-11T08:03:49.1276945",
-=======
       "dateTime": "2023-06-11T06:43:00.9410103",
->>>>>>> parent of 7bfd6a9 (Revert "trying schedule")
       "status": 0,
       "checkIn": null,
       "checkOut": null,
       "studentId": 1059560,
       "roomId": null,
-<<<<<<< HEAD
+      "id": 6020
+    },
+    {
+      "from": "6/16/2023, 10:00:00 AM",
+      "to": "6/16/2023, 12:00:00 PM",
+      "roomId": null,
+      "host": 1059560,
+      "studentId": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "status": 1,
+      "Options": false,
       "id": 6021
     },
     {
-      "dateTime": "2023-06-11T22:42:56.745Z",
-      "from": "6/11/2023, 10:00:00 AM",
-      "to": "6/11/2023, 10:00:00 AM",
-      "roomId": 1,
+      "from": "6/12/2023, 2:00:00 AM",
+      "to": "6/12/2023, 4:00:00 AM",
+      "roomId": null,
       "host": 1059560,
+      "studentId": 1059560,
       "checkIn": null,
       "checkOut": null,
-      "status": 0,
       "Options": false,
       "id": 6022
     },
     {
-      "dateTime": "2023-06-11T22:49:01.633Z",
-      "from": "6/11/2023, 6:48:52 PM",
-      "to": "6/11/2023, 6:48:52 PM",
-      "roomId": 1,
+      "from": "6/12/2023, 1:30:00 AM",
+      "to": "6/12/2023, 5:00:00 AM",
+      "roomId": null,
+      "host": 1059560,
+      "studentId": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "Options": false,
+      "id": 6023
+    },
+    {
+      "from": "6/12/2023, 1:00:00 AM",
+      "to": "6/12/2023, 3:00:00 AM",
+      "roomId": null,
+      "host": 1059560,
+      "studentId": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "Options": false,
+      "id": 6024
+    },
+    {
+      "from": "6/12/2023, 3:44:43 PM",
+      "to": "6/12/2023, 3:44:43 PM",
+      "roomId": null,
+      "host": 1059560,
+      "studentId": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "status": 2,
+      "Options": false,
+      "id": 6025
+    },
+    {
+      "from": "6/15/2023, 10:00:00 AM",
+      "to": "6/12/2023, 12:00:00 PM",
+      "roomId": null,
       "host": 1059560,
       "studentId": 1059560,
       "checkIn": null,
       "checkOut": null,
       "status": 0,
       "Options": false,
-      "id": 6023
-=======
-      "id": 6020
->>>>>>> parent of 7bfd6a9 (Revert "trying schedule")
+      "id": 6026
+    },
+    {
+      "dateTime": "2023-06-12T19:50:17.703Z",
+      "from": "6/12/2023, 8:00:00 AM",
+      "to": "6/12/2023, 10:00:00 AM",
+      "roomId": null,
+      "host": 1059560,
+      "studentId": 1059560,
+      "checkIn": null,
+      "checkOut": null,
+      "status": 2,
+      "Options": false,
+      "id": 6027
     }
   ]
 }
