@@ -1,5 +1,5 @@
 import {ref} from 'vue'
-import { DataManager, ODataV4Adaptor } from '@syncfusion/ej2-data';
+
 
 class PostAppoiments {
 
@@ -67,7 +67,7 @@ class PostAppoiments {
                 status = 1
             }
             let text = {
-            //   dateTime: new Date(Date.now()),
+              dateTime: new Date(Date.now()),
               from: post.startTime.toLocaleString(),
               to: post.endTime.toLocaleString(),
               roomId: null,
