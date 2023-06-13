@@ -9,8 +9,8 @@
                 <th>Opciones</th>
             </tr>
             <tr v-for="post in posts.data">
-                <!-- <td>{{ post.dateTime }}</td> -->
-                <!-- <td>{{ post.studentName + " " + post.studentLastName }}</td> -->
+                <td>{{ post.dateTime }}</td> 
+                <td>{{ post.studentName + " " + post.studentLastName }}</td> 
                 <td>{{ post.roomId }}</td>
                 <td>
                     <p v-if="post.status != 1">Aprovechada</p>
