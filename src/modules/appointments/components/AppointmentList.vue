@@ -1,16 +1,20 @@
 <template>
     <div class="list">
+        <input type="text" :v-model="textId" name="textId" id="textId" value="">
+        <button class="button-search" v-on:click="search">Buscar</button>
+    </div>
+    <div class="list">
         <table>
             <tr>
                 <th>Fecha</th>
-                <th>Estudiante</th>
+                <th>ID Estudiante</th>
                 <th>Cubiculo</th>
                 <th>Estado</th>
                 <th>Opciones</th>
             </tr>
             <tr v-for="post in posts.data">
                 <td>{{ post.dateTime }}</td>
-                <td>{{ post.studentName + " " + post.studentLastName }}</td>
+                <td>{{ post.studentId }}</td>
                 <td>{{ post.roomId }}</td>
                 <td>
                     <p v-if="post.status != 1">Aprovechada</p>
@@ -26,16 +30,25 @@
 <script setup>
     
     import PostAppoiments from './services/PostAppoiments';
-    import { onMounted } from 'vue';
+    import { onMounted, ref } from 'vue';
     const service = new PostAppoiments()
-    const posts = service.Posts
+    const postsS = service.Posts
+    let posts = ref(postsS)
+    let found = {}
     onMounted(async () => {
         await service.fetchAll()
+        console.log(posts.value.data[0])
     })
     function clickCancel(post){
         post.status = 1
         service.updateStatusAppointment(post)
         console.log(post.status)
+    }
+    function search(){
+
+        found = postsS.value.data.find(element => element.studentId === parseInt(textId.value));
+
+        console.log(found)
     }
 </script>
 <style scoped>
@@ -73,6 +86,17 @@ table, th, td {
     padding: 5px;
 }
 .button-cancel:hover{
+    background-color: brown;
+}
+.button-search{
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    margin-left: 2%;
+}
+.button-seacrh:hover{
     background-color: brown;
 }
 </style>
