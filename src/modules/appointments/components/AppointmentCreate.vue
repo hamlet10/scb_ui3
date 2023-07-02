@@ -44,7 +44,7 @@ provide('schedule', [Day, Week, WorkWeek, Month, Agenda]);
 let actual = new Date(Date.now())
 const selectedDate = new Date(actual.getFullYear(), actual.getMonth(), actual.getDate());
 const service = new PostAppoiments()
-const appointments = service.Posts
+let appointments = []
 onMounted(
     // p =>{
     //         return{
@@ -57,11 +57,13 @@ onMounted(
         await service.fetchAll()
     })
 
-let dataManager = new DataManager({
-    url: 'http://localhost:3000/Appointment',
-    adaptor: new ODataV4Adaptor((results) => { dataSource = results}),
-    crossDomain: true,
 
+
+
+let dataManager = new DataManager({
+     url: 'http://localhost:3000/Appointment',
+    adaptor: new ODataV4Adaptor(),
+    crossDomain: true,
 });
 
 
@@ -96,7 +98,7 @@ function onPopupClose(args) {
 }
 
 function onPopupOpen(args) {
-console.log(args)
+    console.log(dataManager.requests[0].httpRequest.response)
 }
 
 

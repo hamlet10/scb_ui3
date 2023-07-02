@@ -23,34 +23,68 @@
   ],
   "Appointment": [
     {
-      "from": "2023-06-11T10:00:00",
-      "to": "2023-06-11T12:00:00",
+      "from": "2023-06-22T23:42:16.569",
+      "to": "2023-06-22T23:42:16.569",
       "host": 1059560,
-      "dateTime": "2023-06-11T06:27:24.8461176",
+      "dateTime": "2023-06-22T23:42:16.569",
+      "status": 0,
+      "checkIn": "2023-06-22T23:42:16.569",
+      "checkOut": "2023-06-22T23:42:16.569",
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 3
+    },
+    {
+      "from": "2023-06-22T10:00:00",
+      "to": "2023-06-22T10:30:00",
+      "host": 1059560,
+      "dateTime": "2023-06-22T19:49:14.5234151",
       "status": 0,
       "checkIn": null,
       "checkOut": null,
       "studentId": 1059560,
       "roomId": null,
-      "id": 6019
+      "id": 4
     },
     {
-      "dateTime": "2023-06-12T19:53:48.120Z",
-      "from": "6/16/2023, 10:00:00 AM",
-      "to": "6/16/2023, 12:00:00 PM",
-      "roomId": null,
+      "from": "2023-06-22T10:00:00",
+      "to": "2023-06-22T10:30:00",
       "host": 1059560,
-      "studentId": 1059560,
+      "dateTime": "2023-06-22T19:54:29.0479457",
+      "status": 0,
       "checkIn": null,
       "checkOut": null,
-      "status": 2,
-      "Options": false,
-      "id": 6020
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 5
     },
     {
-      "dateTime": "2023-06-13T18:39:33.563Z",
-      "from": "6/16/2023, 10:00:00 AM",
-      "to": "6/16/2023, 12:00:00 PM",
+      "from": "2023-06-22T10:00:00",
+      "to": "2023-06-22T10:30:00",
+      "host": 1059560,
+      "dateTime": "2023-06-22T19:57:34.3442645",
+      "status": 0,
+      "checkIn": null,
+      "checkOut": null,
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 6
+    },
+    {
+      "from": "2023-06-24T16:00:00",
+      "to": "2023-06-24T16:30:00",
+      "host": 1059560,
+      "dateTime": "2023-06-24T16:25:28.0955703",
+      "status": 0,
+      "checkIn": null,
+      "checkOut": null,
+      "studentId": 1059560,
+      "roomId": null,
+      "id": 1002
+    },
+    {
+      "from": "7/3/2023, 6:00:00 PM",
+      "to": "7/3/2023, 8:00:00 PM",
       "roomId": null,
       "host": 1059560,
       "studentId": 1059560,
@@ -58,7 +92,7 @@
       "checkOut": null,
       "status": 0,
       "Options": false,
-      "id": 6021
+      "id": 1003
     }
   ]
 }
