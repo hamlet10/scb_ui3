@@ -10,21 +10,36 @@ class PostAppoiments {
     get Posts(){
         return this.posts;
     }
-    async fetchAll(){
-        try{ 
-            const url = 'https://localhost:44324/api/Appointment';
-            // const url = 'http://localhost:3000/Appointment';
-            const response = await fetch(url);
-            const json = await response.json();
-            this.posts.value = await json;
+    fetchAll(){
+        // try{ 
+        //     const url = 'https://localhost:44324/api/Appointment';
+        //     // const url = 'http://localhost:3000/Appointment';
+        //     fetch(url)
+        //     .then(response = response.json())
+        //     .then(data => {
+        //         this.posts.value = data.data;
+        //     })
 
-        }catch(err) {
-            console.log(err);
-        }
+        // }catch(err) {
+        //     console.log(err);
+        // }
+        fetch('https://localhost:44324/api/Appointment')
+        .then(response => response.json())
+        .then(data => {
+            if (Array.isArray(data.data)) {
+            this.posts = data.data;
+            console.log(this.posts)
+            } else {
+            throw new Error('La respuesta de la API no contiene un arreglo de registros');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
     async updateStatusAppointment(post){
         try{
-            const url = `https://localhost:9001/api/Appointment/${post.id}`
+            const url = `https://localhost:44324/api/Appointment/${post.id}`
             let status;
             if (post.status != 1) {
                 status = 0
@@ -41,8 +56,6 @@ class PostAppoiments {
                 "checkIn": post.checkIn,
                 "checkOut": post.checkOut,
                 "studentId": post.studentId,
-                "studentName": post.studentName,
-                "studentLastName": post.studentLastName,
                 "roomId": post.roomId
             }
             await fetch(url, {

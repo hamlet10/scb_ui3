@@ -1,4 +1,9 @@
 <template>
+      <Popup>
+        <Regulation>
+
+        </Regulation>
+    </Popup>
   <div class="container">
     <img class="home-image" src="https://biblioteca.intec.edu.do//templates/yootheme/cache/17/fachada-nueva-17530efb.jpeg" alt="Bliblioteca">
     <nav>
@@ -30,7 +35,9 @@
   </div>
   
 </template>
-<script>
+<script setup>
+  import Regulation from '@/modules/libraryRegulation/Regulations.vue';
+  import Popup from '@/modules/Popups/Popup.vue'
 </script>
 <style scoped>
 .container{
