@@ -1,9 +1,9 @@
 <template>
-      <Popup>
+      <!-- <Popup>
         <Regulation>
 
         </Regulation>
-    </Popup>
+    </Popup> -->
   <div class="container">
     <img class="home-image" src="https://biblioteca.intec.edu.do//templates/yootheme/cache/17/fachada-nueva-17530efb.jpeg" alt="Bliblioteca">
     <nav>
